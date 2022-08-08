@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('Saeed-aws-secret-access-key')
-        AWS_SECRET_ACCESS_KEY = credentials('saeed-aws-secret-key-id')
+        AWS_ACCESS_KEY_ID     = credentials('saeed-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('Saeed-aws-secret-access-key')
         ARTIFACT_NAME = 'artifact-sda.jar'
         AWS_S3_BUCKET = 'saeed-belt2d2-artifacts-123456'
         AWS_EB_APP_NAME = 'Saeed-sample-application'
