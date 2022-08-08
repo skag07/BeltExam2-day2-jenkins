@@ -3,10 +3,10 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('saeed-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('Saeed-aws-secret-access-key')
-        ARTIFACT_NAME = 'beltexam2day2.jar'
+        ARTIFACT_NAME = 'beltexam2d2.jar'
         AWS_S3_BUCKET = 'saeed-belt2d2-artifacts-123456'
-        AWS_EB_APP_NAME = 'Saeed-sample-application'
-        AWS_EB_ENVIRONMENT = 'Saeedsampleapplication-env'
+        AWS_EB_APP_NAME = 'aeed-sample-application1'
+        AWS_EB_ENVIRONMENT = 'Aeedsampleapplication1-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
     } 
     stages {
