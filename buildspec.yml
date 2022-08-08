@@ -3,7 +3,7 @@ version: 0.2
 phases:
     commands:
       - echo Build started on `date`
-      - echo Hello Saeed Alghamdi `date`
+      - <h1> Hello Saeed </h1>
   post_build:
     commands:
       - echo Build completed on `date`
