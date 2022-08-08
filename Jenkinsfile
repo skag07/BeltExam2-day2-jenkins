@@ -4,7 +4,7 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('Saeed-aws-secret-access-key')
         AWS_SECRET_ACCESS_KEY = credentials('saeed-aws-secret-key-id')
         ARTIFACT_NAME = 'artifact-sda.jar'
-        AWS_S3_BUCKET = 'sda-learning-jenkins'
+        AWS_S3_BUCKET = 'saeed-belt2d2-artifacts-123456'
         AWS_EB_APP_NAME = 'Saeed-sample-application'
         AWS_EB_ENVIRONMENT = 'Saeedsampleapplication-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
@@ -56,7 +56,7 @@ pipeline {
        stage('Publish') {
             steps {
                 sh 'aws configure set region us-east-1'
-                sh 'aws s3 cp ./target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar s3://sda-learning-jenkins/artifact-sda.jar'
+                sh 'aws s3 cp ./target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar s3://saeed-belt2d2-artifacts-123456/artifact.jar'
                 sh 'aws elasticbeanstalk create-application-version --application-name $AWS_EB_APP_NAME --version-label $AWS_EB_APP_VERSION --source-bundle S3Bucket=$AWS_S3_BUCKET,S3Key=$ARTIFACT_NAME'
                 sh 'aws elasticbeanstalk update-environment --application-name $AWS_EB_APP_NAME --environment-name $AWS_EB_ENVIRONMENT --version-label $AWS_EB_APP_VERSION'
             }
