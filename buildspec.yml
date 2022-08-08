@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  build:
+    install:
+      runtime-versions:
+        java: corretto11
+
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Jenkinsfile...
+      - Jenkinsfile
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - Jenkinsfile
